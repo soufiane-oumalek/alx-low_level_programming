@@ -1,5 +1,4 @@
 #include<stdio.h>
-
 /**
  *main - Entry point
  *Return: 0 Always (Success)
@@ -22,5 +21,5 @@ int main(void)
 
 	printf("size of a float: %lu byte(s)\n", sizeof(float));
 
-        return (0);
+	return (0);
 }
