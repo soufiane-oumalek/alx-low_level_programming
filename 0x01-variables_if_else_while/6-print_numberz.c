@@ -7,12 +7,12 @@
  */
 int main(void)
 {
-	int n = 0;
+	int d = 48;
 
-	while (n < 10)
+	while (d < 58)
 	{
-		printf("%d", n);
-		n++;
+		putchar(d);
+		d++;
 	}
 	putchar('\n');
 
