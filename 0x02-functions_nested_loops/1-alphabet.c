@@ -1,11 +1,11 @@
 #include "main.h"
+
 /**
- * print alphabet - print alphabet in lowecase
- *
- * Return: Always 0 (Success)
+ * print_alphabet - Entry point
+ * Return:0
  */
 
-void print_alphabet(void);
+void print_alphabet(void)
 {
 	char c = 'a';
 
@@ -13,6 +13,7 @@ void print_alphabet(void);
 	{
 		_putchar(c);
 		c++;
+
 	}
 	_putchar('\n');
 	return (0);
