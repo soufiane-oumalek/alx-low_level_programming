@@ -1,10 +1,13 @@
-#include "main.h"
+#include <unistd.h>
+
 /**
- * _islower - check for lower case letter
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
  *
- * Return: Always 0
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
  */
-int _islower(int c)
+int _putchar(char c)
 {
-	return (c < 97 && c <= 122);
+	return (write(1, &c, 1));
 }
