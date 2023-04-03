@@ -1,10 +1,10 @@
 #include "main.h"
 
  /**
- * _strstr - function for locates a substring
+ * _strstr - function locates a substring
  * @haystack: pointer on char
  * @needle: pointer on  char
- * Return: Always 0 (Success)
+ * Return: 0 Always (success)
  */
 
 char *_strstr(char *haystack, char *needle)
@@ -14,7 +14,7 @@ char *_strstr(char *haystack, char *needle)
 		char *a = haystack;
 		char *p = needle;
 
-		while (*a == *p && *p != '\0')
+		while ( *a == *p && *p != '\0')
 		{
 			a++;
 			p++;
