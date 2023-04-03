@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * _memset - fills memory with a constant byte
- * @s:starting pointer
- * @b:change data
- * @n:number change
- * Returns: s
+ * _memset - ironnou
+ * @s: pointer char params
+ * @b: change data
+ * @n: index
+ * Return: *s
  */
 
 char *_memset(char *s, char b, unsigned int n)
