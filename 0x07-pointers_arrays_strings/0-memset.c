@@ -5,7 +5,7 @@
  * @s:starting pointer
  * @b:change data
  * @n:number change
- * Returns: pointer to the memory area s
+ * Returns: change array with new a value n bytes
  */
 
 char *_memset(char *s, char b, unsigned int n)
