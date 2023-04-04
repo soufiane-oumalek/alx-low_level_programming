@@ -1,10 +1,10 @@
 #include "main.h"
 
  /**
- * _strstr - function for locates a substring
- * @haystack: pointer on char
- * @needle: pointer on  char
- * Return: Always 0 (Success)
+ * _strstr - function for locate a substring
+ * @haystack: string for working on
+ * @needle: substring to match
+ * Return: 0
  */
 
 char *_strstr(char *haystack, char *needle)
@@ -20,7 +20,7 @@ char *_strstr(char *haystack, char *needle)
 			p++;
 		}
 		if (*p == '\0')
-			return (haystack);
+		return (haystack);
 	}
 	return (0);
 }
