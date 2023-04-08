@@ -5,7 +5,6 @@
  * @s: the string to check in the length
  * Return: length of the string
  */
-
 int _strlen(char *s)
 {
 int length;
