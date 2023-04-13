@@ -3,14 +3,14 @@
 #include "main.h"
 /**
  * *string_nconcat - concatenates 2 strings
- * @s1: pointer for the first string
- * @s2: pointer for the second string
+ * @s1: pointer for string
+ * @s2: array of string
  * @n: number bytes
  * Return: pointer shall point to a newly allocated space in memory
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int index1, index2, length1, length2;
+	unsigned int i, length1, index;
 	char *s;
 
 	if (s1 == 0)
@@ -19,22 +19,25 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s2 = "";
 	length1 = 0;
 
-	while (*(s1 + length1))
+	while (s1[length1])
 		length1++;
-	length2 = 0;
 
-	while (*(s2 + length2))
-		length2++;
-	if (n >= length2)
-		n = length2;
 	s = malloc(sizeof(char) * (length1 + n + 1));
-	if (s == 0)
-		return (0);
-	for (index1 = 0; index1 < length1; index1++)
-		*(s + index1) = *(s1 + index1);
-	for (index2 = 0; index2 < n; index2++, index1++)
-		*(s + index1) = *(s2 + index2);
-	*(s + index1) = '\0';
-	return (s);	
-}
 
+	if (s == NULL)
+		return (NULL);
+
+	for (i = 0, index = 0; i < (length1 + n); i++)
+	{
+		if (i < length1)
+		{
+			s[i] = s1[i];
+		}
+		else
+		{
+			s[i] = s2[index++];
+		}
+	}
+	s[i] = '\0';
+	return (s);
+}
