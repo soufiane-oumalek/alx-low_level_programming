@@ -1,35 +1,41 @@
-#include  <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
-
+#include <string.h>
+#include <ctype.h>
 /**
- * main - adds positive numbers
- * @argc: argument to count
- * @argv: array name
- * Retune: 0
+ * _main - adds positive numbers
+ * @argc: argument fot count
+ * @argv: pointer array
+ * Retrun: int
  */
+
 int main(int argc, char **argv)
 {
-	int i, k, S;
+	char *ptr;
+	int i, k, S, len;
 
-	if (argc == 1)
-	{
+	if (argc < 2)
 		printf("0\n");
-		return (0);
-	}
-
-	for (i = 1; i < argc; i++)
+	else
 	{
-		for (k = 0; argv[i][k] != '\0'; k++)
+		S = 0;
+		for (i = 1; i < argc; i++)
 		{
-			if (!((argv[i][k] >= '0' && argv[i][k] < '9') || argv[i][k] == '-'))
+			ptr = argv[i];
+			len = strlen(ptr);
+
+			for (k = 0; k < len; k++)
 			{
-				printf("Error\n");
-				return (1);
+				if (isdigit(*(ptr + k)) == 0)
+				{
+					printf("ERROR\n");
+					return (1);
+				}
 			}
+			S += atoi(argv[i]);
 		}
-		S += atoi(argv[i]);
-	}
 	printf("%d\n", S);
+	}
 	return (0);
 }
 

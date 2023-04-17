@@ -1,10 +1,10 @@
 #include "main.h"
 
  /**
- * _strstr - function for locate a substring
- * @haystack: string for working on
- * @needle: substring to match
- * Return: 0
+ * _strstr - Entry Function
+ * @haystack: char
+ * @needle: char
+ * Return: haystack or NULL (Success)
  */
 
 char *_strstr(char *haystack, char *needle)
