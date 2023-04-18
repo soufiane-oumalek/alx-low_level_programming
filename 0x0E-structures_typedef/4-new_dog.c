@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 /**
- * strlen - return len of string
+ * _strlen - return len of string
  * @s: string
  * Return: len of string
  */
@@ -21,7 +21,7 @@ int _strlen(char *s)
 }
 
 /**
- * strcpy - cpy the pointed string
+ * *_strcpy - cpy the pointed string
  * @des: pointer
  * @src: string cpy
  * Return: pointer to the des
@@ -53,6 +53,7 @@ char *_strcpy(char *des, char *src)
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *new_dog;
+	char *new_name, *new_owner;
 
 	/*allocate memory for struct new_dog*/
 	new_dog = malloc(sizeof(dog_t));
@@ -61,9 +62,9 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 
 	/*allocate memory for name of new_dog*/
-	new_dog->name = malloc(sizeof(char) * (strlen(name) + 1));
+	new_name = malloc(sizeof(char) * (strlen(name) + 1));
 
-	if (new_dog->name == NULL)
+	if (new_name == NULL)
 	{
 		free(new_dog);
 		return (NULL);
@@ -73,17 +74,17 @@ dog_t *new_dog(char *name, float age, char *owner)
 	new_dog->age = age;
 
 	/*alocate memory for owner's new_dog*/
-	new_dog->owner = malloc(sizeof(char) * (strlen(owner) + 1));
+	new_owner = malloc(sizeof(char) * (strlen(owner) + 1));
 
-	if (new_dog->owner == NULL)
+	if (new_owner == NULL)
 	{
-		free(new_dog->name);
+		free(new_name);
 		free(new_dog);
 		return (NULL);
 	}
 	/*cpy name and owner string*/
-	new_dog->name = strcpy(new_dog->name, name);
-	new_dog->owner = strcpy(new_dog->owner, name);
+	new_name = strcpy(new_name, name);
+	new_owner = strcpy(new_owner, name);
 	return (new_dog);
 }
 
