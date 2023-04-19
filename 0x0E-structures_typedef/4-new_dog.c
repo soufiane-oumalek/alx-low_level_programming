@@ -70,9 +70,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	}
 
-	/*put age*/
-	new_dog->age = age;
-
 	/*alocate memory for owner's new_dog*/
 	new_owner = malloc(sizeof(char) * (strlen(owner) + 1));
 
@@ -84,11 +81,12 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 
 	/*cpy name and owner string*/
-	new_name = strcpy(new_name, name);
-	new_owner = strcpy(new_owner, name);
+	_strcpy(new_name, name);
+	_strcpy(new_owner, name);
 
 	new_dog->name = new_name;
 	new_dog->owner = new_owner;
+	new_dog->age = age;
 	return (new_dog);
 }
 
