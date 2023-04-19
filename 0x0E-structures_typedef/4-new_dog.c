@@ -2,24 +2,6 @@
 #include "dog.h"
 #include <stdio.h>
 #include <string.h>
-/**
- * *_strcpy - cpy the pointed string
- * @des: pointer
- * @src: string cpy
- * Return: pointer to the dest
- */
-char *_strcpy(char *dest, char *src)
-{
-	int length = 0;
-
-	while (*(src + length) != '\0')
-	{
-		*(dest + length) = *(src + length);
-		length++;
-	}
-	*(dest + length) = *(src + length);
-	return (dest);
-}
 
 /**
  * *new_dog - creates a new dog
@@ -51,8 +33,28 @@ dog_t *new_dog(char *name, float age, char *owner)
 	new_dog->name = new_name;
 	new_dog->owner = vowner;
 	new_dog->age = age;
-	_strcpy(new_name, name);
-	_strcpy(vowner, owner);
+	strcpy(new_name, name);
+	strcpy(vowner, owner);
 	return (new_dog);
+}
+
+
+/**
+ * *_strcpy - cpy the pointed string
+ * @dest: pointer
+ * @src: string cpy
+ * Return: pointer to the dest
+ */
+char *_strcpy(char *dest, char *src)
+{
+	int length = 0;
+
+	while (*(src + length) != '\0')
+	{
+		*(dest + length) = *(src + length);
+		length++;
+	}
+	*(dest + length) = *(src + length);
+	return (dest);
 }
 
