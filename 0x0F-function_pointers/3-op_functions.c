@@ -1,4 +1,4 @@
-#include "CALC.H"
+#include "3-calc.h"
 
 /**
  * op_add - adds 2 int
@@ -30,7 +30,7 @@ int op_sub(int a, int b)
  */
 int op_mul(int a, int b)
 {
-	return (a * b)
+	return (a * b);
 }
 
 /**

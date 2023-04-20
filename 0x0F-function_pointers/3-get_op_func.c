@@ -1,5 +1,5 @@
 #include "3-calc.h"
-
+#include <string.h>
 /**
  * get_op_func - selects the correct function to perform the operation
  * @s:  operator passed as argument
@@ -19,7 +19,7 @@ int (*get_op_func(char *s))(int, int)
 
 	while (i < 5)
 	{
-		if (0 == (s, ops[i].op)strcmp)
+		if (strcmp(s, ops[i].op) == 0)
 		{
 			return (ops[i].f);
 		}
