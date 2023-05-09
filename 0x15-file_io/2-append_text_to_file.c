@@ -20,18 +20,17 @@ int append_text_to_file(const char *filename, char *text_content)
 		return (-1);
 	}
 
-	fd = open(filename, O_WRONLY | O_APPEND | O_CREAT, 0644);
+	fd = open(filename, O_WRONLY | O_APPEND);
 	if (fd == -1)
 	{
 		return (-1);
 	}
+	writt = 0;
 
-	if (text_content)
+	if (text_content != NULL)
 	{
+		writt = write(fd, text_content, strlen(text_content));
 
-		size_t len = strlen(text_content);
-
-		writt = write(fd, text_content, len);
 		if (writt == -1)
 		{
 			close(fd);
@@ -40,6 +39,6 @@ int append_text_to_file(const char *filename, char *text_content)
 	}
 
 	close(fd);
-	return (writt);
+	return (1);
 }
 
