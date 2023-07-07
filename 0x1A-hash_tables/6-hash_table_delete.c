@@ -15,10 +15,10 @@ void hash_table_delete(hash_table_t *ht)
 		{
 			for (node_ptr = ht->array[index]; node_ptr != NULL; node_ptr = p)
 			{
-				p = hash_node_ptr->next;
-				free(hash_node_ptr->key);
-				free(hash_node_ptr->value);
-				free(hash_node_ptr);
+				p = node_ptr->next;
+				free(node_ptr->key);
+				free(node_ptr->value);
+				free(node_ptr);
 			}
 		}
 		index++;
