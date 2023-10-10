@@ -1,7 +1,7 @@
 #include "search_algos.h"
 #include <stdio.h>
 /**
- * binary_search - searches for a value in an array of integers
+ * linear_search - searches for a value in an array of integers
  * using the Linear search algorithm
  * @array: an array
  * @size: size array
@@ -22,6 +22,5 @@ int linear_search(int *array, size_t size, int value)
 			return (i);
 		i++;
 	}
-
 	return (-1);
 }
