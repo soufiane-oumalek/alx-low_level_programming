@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * binary_search - Searches for a value in a sorted array using binary search.
+ * _binary_search - Searches for a value in a sorted array using binary search.
  * @array: Pointer to the first element of the array to search.
  * @left: Starting index of the subarray.
  * @right: Ending index of the subarray.
@@ -36,7 +36,8 @@ int _binary_search(int *array, size_t left, size_t right, int value)
 }
 
 /**
- * exponential_search - Searches for a value in a sorted array using exponential search.
+ * exponential_search - Searches for a value in a sorted array
+ * using exponential search.
  * @array: Pointer to the first element of the array to search.
  * @size: Number of elements in the array.
  * @value: The value to search for.
